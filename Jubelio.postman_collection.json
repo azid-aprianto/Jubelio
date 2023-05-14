@@ -1,0 +1,282 @@
+{
+	"info": {
+		"_postman_id": "5a4e749c-ddc6-46e3-bde4-515fb8050771",
+		"name": "Jubelio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18872287"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "All Product Price",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlVTRVI6cWEucmFrYW1pbi5qdWJlbGlvQGdtYWlsLmNvbToxMTQuMTI0LjIwOS4xNTAiLCJleHAiOjE2ODQwODIwNzg1ODMsImlhdCI6MTY4NDAzODg3OH0.ikqEQ6_Xp1vVKGjmPGenfIN971zTRAnXdO-gAa92wpQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"channels\": [\r\n    {\r\n      \"store_id\": 359,\r\n      \"channel_name\": \"Elevenia\",\r\n      \"store_name\": \"truzteeshop\"\r\n    }\r\n  ],\r\n  \"data\": [\r\n    {\r\n      \"item_group_id\": 1,\r\n      \"item_id\": 2273,\r\n      \"item_name\": \"Baju Corak Carik Warna Warni\",\r\n      \"item_code\": \"BLACK\",\r\n      \"brand_name\": null,\r\n      \"prices\": [\r\n        {\r\n          \"store_id\": 359,\r\n          \"price\": 100000\r\n        }\r\n      ],\r\n      \"last_modified\": null\r\n    }\r\n  ],\r\n  \"totalCount\": 1,\r\n  \"modified_by\": [\r\n    \"string\"\r\n  ],\r\n  \"channel_status\": [\r\n    \"string\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/inventory/internal-price-list/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"inventory",
+								"internal-price-list",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Product Image",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlVTRVI6cWEucmFrYW1pbi5qdWJlbGlvQGdtYWlsLmNvbToxMTQuMTI0LjIwOS4xNTAiLCJleHAiOjE2ODQwODIxNzgxNDgsImlhdCI6MTY4NDAzODk3OH0.YZbwwojYEqN0JQdAoHQ8ues53ImaSB91ehIj-kcu-QM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/IT-02/Pictures/KAI@MW-1.JPG"
+								},
+								{
+									"key": "name",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "TotalFileSize",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "uid",
+									"value": "test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/inventory/upload-image",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"inventory",
+								"upload-image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlVTRVI6cWEucmFrYW1pbi5qdWJlbGlvQGdtYWlsLmNvbToxMTQuMTI0LjIwOS4xNTAiLCJleHAiOjE2ODQwODIwNzg1ODMsImlhdCI6MTY4NDAzODg3OH0.ikqEQ6_Xp1vVKGjmPGenfIN971zTRAnXdO-gAa92wpQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ids\": [\r\n    1\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/inventory/items/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"inventory",
+								"items",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Product Price Unsuccesfully",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlVTRVI6cWEucmFrYW1pbi5qdWJlbGlvQGdtYWlsLmNvbToxMTQuMTI0LjIwOS4xNTAiLCJleHAiOjE2ODQwODIwNzg1ODMsImlhdCI6MTY4NDAzODg3OH0.ikqEQ6_Xp1vVKGjmPGenfIN971zTRAnXdO-gAa92wpQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"channels\": [\r\n    {\r\n      \"store_id\": 359,\r\n      \"channel_name\": \"Elevenia\",\r\n      \"store_name\": \"truzteeshop\"\r\n    }\r\n  ],\r\n  \"data\": [\r\n    {\r\n      \"item_group_id\": 1,\r\n      \"item_id\": 2273,\r\n      \"item_name\": \"Baju Corak Carik Warna Warni\",\r\n      \"item_code\": \"BLACK\",\r\n      \"brand_name\": null,\r\n      \"prices\": [\r\n        {\r\n          \"store_id\": 359,\r\n          \"price\": 100000\r\n        }\r\n      ],\r\n      \"last_modified\": null\r\n    }\r\n  ],\r\n  \"totalCount\": 1,\r\n  \"modified_by\": [\r\n    \"string\"\r\n  ],\r\n  \"channel_status\": [\r\n    \"string\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/inventory/internal-price-list/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"inventory",
+								"internal-price-list",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login Jubelio Successfully",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"qa.rakamin.jubelio@gmail.com\",\r\n    \"password\": \"Jubelio123!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Jubelio Unsuccessfully",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlVTRVI6cWEucmFrYW1pbi5qdWJlbGlvQGdtYWlsLmNvbToxMTQuMTI0LjIwOS4xNTAiLCJleHAiOjE2ODQwODIxNzgxNDgsImlhdCI6MTY4NDAzODk3OH0.YZbwwojYEqN0JQdAoHQ8ues53ImaSB91ehIj-kcu-QM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"qa.rakamin.jubelio@gmail.com\",\r\n    \"password\": \"\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
